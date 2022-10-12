@@ -10,10 +10,19 @@ public class WashingMachine {
   private int noofClothes;
   private String detergent;
 
-  public WashingMachine(boolean p, int c, String d) {
-    this.setPower(p);
-    this.setNoofClothes(c);
-    this.setDetergent(d);
+  public WashingMachine() {
+    this.setPower(false);
+    this.setNoofClothes(0);
+    this.setDetergent("");
+  }
+
+  public static void main(String[] args) {
+    System.out.println("jessica's washing machine");
+    WashingMachine wm = new WashingMachine();
+    wm.acceptClothes(5);
+    wm.acceptDetergent("tide");
+    wm.switchOn();
+    wm.switchOff();
   }
 
   public boolean isPower() {
@@ -40,23 +49,25 @@ public class WashingMachine {
     this.detergent = detergent;
   }
 
-  public void swtichOn() {
+  public void switchOn() {
     System.out.println("Power on..");
     this.setPower(true);
   }
 
-  public void switchOFF() {
+  public void switchOff() {
     System.out.println("Power off..");
     this.setPower(false);
   }
 
   public int acceptClothes(int noofClothes) {
     this.setNoofClothes(noofClothes);
+    System.out.println("Accepting " + this.getNoofClothes() + "...");
     return this.getNoofClothes();
   }
 
   public String acceptDetergent(String detergent) {
     this.setDetergent(detergent);
+    System.out.println("Accepting " + this.getDetergent() + "...");
     return this.getDetergent();
   }
 }
