@@ -6,6 +6,15 @@
 package com.jessica;
 
 public class WashingMachine {
+  
+  public static void main(String[] args) {
+    System.out.println("jessica's washing machine");
+    WashingMachine wm = new WashingMachine();
+    wm.acceptClothes(5);
+    wm.acceptDetergent("tide");
+    wm.switchOn();
+    wm.switchOff();
+  }
   private boolean power;
   private int noofClothes;
   private String detergent;
@@ -14,15 +23,6 @@ public class WashingMachine {
     this.setPower(false);
     this.setNoofClothes(0);
     this.setDetergent("");
-  }
-
-  public static void main(String[] args) {
-    System.out.println("jessica's washing machine");
-    WashingMachine wm = new WashingMachine();
-    wm.acceptClothes(5);
-    wm.acceptDetergent("tide");
-    wm.switchOn();
-    wm.switchOff();
   }
 
   public boolean isPower() {
@@ -61,13 +61,13 @@ public class WashingMachine {
 
   public int acceptClothes(int noofClothes) {
     this.setNoofClothes(noofClothes);
-    System.out.println("Accepting " + this.getNoofClothes() + "...");
+    System.out.println("Accepting " + this.getNoofClothes() + " clothes...");
     return this.getNoofClothes();
   }
 
   public String acceptDetergent(String detergent) {
     this.setDetergent(detergent);
-    System.out.println("Accepting " + this.getDetergent() + "...");
+    System.out.println("Accepting " + this.getDetergent() + " detergent...");
     return this.getDetergent();
   }
 }
