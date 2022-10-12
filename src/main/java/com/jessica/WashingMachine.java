@@ -39,4 +39,24 @@ public class WashingMachine {
   public void setDetergent(String detergent) {
     this.detergent = detergent;
   }
+
+  public void swtichOn() {
+    System.out.println("Power on..");
+    this.setPower(true);
+  }
+
+  public void switchOFF() {
+    System.out.println("Power off..");
+    this.setPower(false);
+  }
+
+  public int acceptClothes(int noofClothes) {
+    this.setNoofClothes(noofClothes);
+    return this.getNoofClothes();
+  }
+
+  public String acceptDetergent(String detergent) {
+    this.setDetergent(detergent);
+    return this.getDetergent();
+  }
 }
