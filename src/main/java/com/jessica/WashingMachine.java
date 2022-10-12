@@ -6,5 +6,68 @@
 package com.jessica;
 
 public class WashingMachine {
+  
+  public static void main(String[] args) {
+    System.out.println("jessica's washing machine");
+    WashingMachine wm = new WashingMachine();
+    wm.acceptClothes(5);
+    wm.acceptDetergent("tide");
+    wm.switchOn();
+    wm.switchOff();
+  }
+  private boolean power;
+  private int noofClothes;
+  private String detergent;
 
+  public WashingMachine() {
+    this.setPower(false);
+    this.setNoofClothes(0);
+    this.setDetergent("");
+  }
+
+  public boolean isPower() {
+    return power;
+  }
+
+  public void setPower(boolean power) {
+    this.power = power;
+  }
+
+  public int getNoofClothes() {
+    return noofClothes;
+  }
+
+  public void setNoofClothes(int noofClothes) {
+    this.noofClothes = noofClothes;
+  }
+
+  public String getDetergent() {
+    return detergent;
+  }
+
+  public void setDetergent(String detergent) {
+    this.detergent = detergent;
+  }
+
+  public void switchOn() {
+    System.out.println("Power on..");
+    this.setPower(true);
+  }
+
+  public void switchOff() {
+    System.out.println("Power off..");
+    this.setPower(false);
+  }
+
+  public int acceptClothes(int noofClothes) {
+    this.setNoofClothes(noofClothes);
+    System.out.println("Accepting " + this.getNoofClothes() + " clothes...");
+    return this.getNoofClothes();
+  }
+
+  public String acceptDetergent(String detergent) {
+    this.setDetergent(detergent);
+    System.out.println("Accepting " + this.getDetergent() + " detergent...");
+    return this.getDetergent();
+  }
 }
